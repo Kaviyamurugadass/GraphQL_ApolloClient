@@ -6,7 +6,7 @@ const GET_COUNTRIES = gql`
     countries {
       code
       name
-      
+      emoji
       currency
     }
   }
@@ -28,3 +28,10 @@ export default function Countries() {
     </ul>
   );
 }
+// gql → parses the query
+
+// useQuery(GET_COUNTRIES) → fetches data
+
+// loading, error, data → state provided by Apollo
+
+// data.countries.map(...) → shows the list of countries

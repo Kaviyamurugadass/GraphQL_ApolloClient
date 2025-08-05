@@ -5,7 +5,9 @@ import React from 'react';
 
 const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com/',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache() //cache: Apollo stores data locally to avoid refetching
+
+
 });
 
 const container = document.getElementById('root');
@@ -15,4 +17,13 @@ root.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>
-);
+); // This wraps your whole app inside ApolloProvider so all components can use GraphQL.
+
+
+// ApolloClient: creates a client to talk to the GraphQL API.
+
+// InMemoryCache: stores responses in memory so we don't fetch again.
+
+// ApolloProvider: like context, it lets the whole app use Apollo.
+
+// createRoot: React 18 way of rendering your app.
