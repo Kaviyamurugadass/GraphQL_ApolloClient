@@ -2,6 +2,7 @@
 import React from "react";
 import Characters from "./components/Characters";
 import CursorPagination from './components/CursorPagination';
+import InfiniteScrollCharacters from "./components/InfiniteScrollCharacters";
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,7 +19,8 @@ function App() {
     <ApolloProvider client={client}>
          <h1 className="text-2xl font-bold text-center my-4">Rick & Morty API</h1>
 
-      <CursorPagination />
+       {/* <CursorPagination /> */}
+      <InfiniteScrollCharacters /> 
       {/* <Characters /> */}
     </ApolloProvider>
   );

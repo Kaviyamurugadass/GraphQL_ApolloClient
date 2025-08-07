@@ -19,3 +19,19 @@ export const GET_CHARACTERS = gql`
     }
   }
 `;
+
+
+export const GET_CHARACTERS_INFINITE_SCROLL = gql`
+  query ($page: Int) {
+    characters(page: $page) {
+      info {
+        next
+      }
+      results {
+        id
+        name
+        image
+      }
+    }
+  }
+`;
