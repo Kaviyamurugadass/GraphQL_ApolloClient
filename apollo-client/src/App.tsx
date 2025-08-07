@@ -1,6 +1,7 @@
 // src/App.tsx
 import React from "react";
 import Characters from "./components/Characters";
+import CursorPagination from './components/CursorPagination';
 import {
   ApolloClient,
   InMemoryCache,
@@ -15,7 +16,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Characters />
+         <h1 className="text-2xl font-bold text-center my-4">Rick & Morty API</h1>
+
+      <CursorPagination />
+      {/* <Characters /> */}
     </ApolloProvider>
   );
 }
