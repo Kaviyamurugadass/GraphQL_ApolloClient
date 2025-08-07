@@ -1,12 +1,17 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+import React, { Suspense } from 'react';
 
 const client = new ApolloClient({
   uri: 'https://countries.trevorblades.com/',
-  cache: new InMemoryCache() //cache: Apollo stores data locally to avoid refetching
-
+  cache: new InMemoryCache(), //cache: Apollo stores data locally to avoid refetching
+   defaultOptions: {
+    watchQuery: {
+      suspense: true,
+    },
+  },
 
 });
 
@@ -15,7 +20,11 @@ const root = createRoot(container);
 
 root.render(
   <ApolloProvider client={client}>
-    <App />
+    <ErrorBoundary>
+    <Suspense fallback={<p>Loading countries...</p>}>
+      <App />
+    </Suspense>
+    </ErrorBoundary>
   </ApolloProvider>
 ); // This wraps your whole app inside ApolloProvider so all components can use GraphQL.
 

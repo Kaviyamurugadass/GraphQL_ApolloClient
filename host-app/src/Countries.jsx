@@ -18,12 +18,9 @@ const GET_COUNTRIES = gql`
 `;
 
 export default function Countries() {
-  const { loading, error, data} = useQuery(GET_COUNTRIES);
-
-  
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
+  const { data} = useQuery(GET_COUNTRIES);
+  console.log(  "nskjfn" ,data);
+  if (!data || !data.countries) return null;
   return (
     <>
     <Variable />
