@@ -1,6 +1,7 @@
 import React from 'react';
 import RefetchQueries from './components/RefetchQueries';
 // import PollInterval from './components/PollInterval';
+import Subscription from './components/Subscription';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h1 className="text-2xl font-bold text-center my-4">User Management</h1>
       {/* <PollInterval /> */}
       {/* <RefetchQueries /> */}
+      <Subscription />
     </div>
   );
 }
