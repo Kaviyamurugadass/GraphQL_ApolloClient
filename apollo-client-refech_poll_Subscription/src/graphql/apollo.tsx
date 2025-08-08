@@ -31,5 +31,7 @@ const splitLink = split(
 export const client = new ApolloClient({
   link: splitLink,
   cache: new InMemoryCache(),
+  name: 'live chat app',
+  version: "1.0",
 });
 export default client;

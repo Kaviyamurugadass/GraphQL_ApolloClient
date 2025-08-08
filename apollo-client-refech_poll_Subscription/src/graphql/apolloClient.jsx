@@ -31,6 +31,8 @@ const splitLink = split(      //Leverage split() to handle both HTTP and WS oper
 const client = new ApolloClient({
   link: splitLink,
   cache: new InMemoryCache(),
+  name: 'poll interval',
+  version: "1.0",
 });
 
 export default client;
