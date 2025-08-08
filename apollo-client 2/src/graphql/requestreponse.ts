@@ -17,3 +17,9 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const OPERATION_SCHEDULED_SUB = gql`
+  subscription {
+    operationScheduled
+  }
+`;

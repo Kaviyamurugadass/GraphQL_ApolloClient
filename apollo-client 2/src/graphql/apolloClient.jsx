@@ -16,7 +16,7 @@ const wsLink = new GraphQLWsLink(
 );
 
 // Use split to send data to correct link
-const splitLink = split(
+const splitLink = split(      //Leverage split() to handle both HTTP and WS operations.
   ({ query }) => {
     const def = getMainDefinition(query);
     return (
