@@ -18,7 +18,7 @@ const GET_COUNTRIES = gql`
 `;
 
 export default function Countries() {
-  const { data} = useQuery(GET_COUNTRIES);
+  const { data} = useQuery(GET_COUNTRIES,{ fetchPolicy: "cache-first" });
   console.log(  "nskjfn" ,data);
   if (!data || !data.countries) return null;
   return (

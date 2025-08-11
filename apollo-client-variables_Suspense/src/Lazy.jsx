@@ -7,7 +7,7 @@ export const GET_COUNTRY_BY_CODE = gql`
   query GetCountry($code: ID!) {
     country(code: $code) {
       code
-      name @client # Fetch data only from Apollo Client’s local cache.
+      name 
       emoji @skip(if: true) # This will always include the emoji field
     }
   }
