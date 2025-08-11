@@ -20,11 +20,11 @@ const root = createRoot(container);
 
 root.render(
   <ApolloProvider client={client}>
-    <ErrorBoundary>
+    {/* <ErrorBoundary> */}
     <Suspense fallback={<p>Loading countries...</p>}>
       <App />
     </Suspense>
-    </ErrorBoundary>
+    {/* </ErrorBoundary> */}
   </ApolloProvider>
 ); // This wraps your whole app inside ApolloProvider so all components can use GraphQL.
 
