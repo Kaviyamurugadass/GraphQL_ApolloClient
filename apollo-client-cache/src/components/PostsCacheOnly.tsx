@@ -5,7 +5,7 @@ import { GET_POSTS } from "../queries";
 export default function PostsCacheOnly() {
   const { data, loading, error } = useQuery(GET_POSTS, {
     variables: { page: 1, limit: 5 },
-    fetchPolicy: "cache-only",
+    fetchPolicy: "cache-first",
   });
 
   // With cache-only, loading will be false and there is no network

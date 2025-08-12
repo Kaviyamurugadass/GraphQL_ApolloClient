@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div>
-      <Cache />
+      {/* <Cache /> */}
       <button onClick={() => setView("network")}>Network</button>
       <button onClick={() => setView("cache")}>Cache-only</button>
       {view === "network" ? <PostsNetwork /> : <PostsCacheOnly />}
