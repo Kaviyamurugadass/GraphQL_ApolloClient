@@ -3,12 +3,17 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_USERS, ADD_USER } from '../graphql/requestreponse';
 
 export default function RefetchQueries() {
-  const { data, loading, error } = useQuery(GET_USERS);
+  const { data, loading, error } = useQuery(GET_USERS,
+    {
+      fetchPolicy: 'cache-and-network', // Ensures we get the latest data from the server
+    }
+  );
   const [name, setName] = useState('');
   
-  const [addUser] = useMutation(ADD_USER, {
-    refetchQueries: [{ query: GET_USERS }], // 👈 KEY POINT
-  });
+  const [addUser] = useMutation(ADD_USER,);
+  // const [addUser] = useMutation(ADD_USER, {
+  //   refetchQueries: [{ query: GET_USERS }], // 👈 KEY POINT
+  // });
 
   const handleAdd = () => {
     if (name.trim()) {

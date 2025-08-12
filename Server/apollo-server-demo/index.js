@@ -1,3 +1,4 @@
+// node index.js
 const { ApolloServer, gql } = require('apollo-server');
 
 // Sample data

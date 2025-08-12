@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ApolloProvider } from '@apollo/client';
-// import client from './graphql/apolloserver'; // Adjust the import path as necessary
+import client from './graphql/apolloserver'; // Adjust the import path as necessary
 // import client from './graphql/apolloClient'; // Adjust the import path as necessary
-import client from './graphql/apollo'; // Adjust the import path as necessary
+// import client from './graphql/apollo'; // Adjust the import path as necessary
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

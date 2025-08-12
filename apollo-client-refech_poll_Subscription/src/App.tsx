@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <h1 className="text-2xl font-bold text-center my-4">User Management</h1>
       {/* <PollInterval /> */}
-      {/* <RefetchQueries /> */}
+      <RefetchQueries />
       {/* <Subscription /> */}
-      <Chat />
+      {/* <Chat /> */}
     </div>
   );
 }
